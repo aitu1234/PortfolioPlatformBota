@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Портфолио' %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/auth/login">Вход</a>
+            <a href="/auth/register">Регистрация</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Портфолио</h1>
+
+        <!-- Форма для добавления нового элемента -->
+        <h2>Добавить новый элемент</h2>
+        <form action="/portfolio/add" method="POST">
+            <input type="text" name="title" placeholder="Название" required>
+            <textarea name="description" placeholder="Описание" required></textarea>
+            <input type="text" name="images" placeholder="URL изображения (через запятую)" required>
+            <button type="submit">Добавить</button>
+        </form>
+
+        <!-- Отображение всех элементов портфолио -->
+        <h2>Ваши элементы портфолио:</h2>
+        <div class="portfolio-items">
+            <% items.forEach(item => { %>
+                <div class="portfolio-item">
+                    <h3><%= item.title %></h3>
+                    <p><%= item.description %></p>
+                    <div>
+                        <% item.images.forEach(image => { %>
+                            <img src="<%= image %>" alt="<%= item.title %>" style="width: 150px;">
+                        <% }); %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024. Zhamanbai Akbota BDA-2303.</p>    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <main>
+        <h1>Login</h1>
+        <form action="/auth/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <!-- 2FA Code -->
+            <label for="twoFactorAuth">2FA Code (if enabled):</label>
+            <input type="text" id="twoFactorAuth" name="twoFactorAuth" placeholder="Enter 2FA code">
+            
+            <button type="submit">Login</button>
+        </form>
+        <footer>
+            <p>&copy; 2024. Zhamanbai Akbota BDA-2303.</p>
+        </footer>
+    </main>
+</body>
+</html>
