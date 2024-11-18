@@ -9,22 +9,10 @@ const userSchema = new mongoose.Schema(
         lastName: String,
         age: { type: Number, min: 0 },
         gender: { type: String, enum: ['male', 'female', 'other'], default: 'other' },
-        role: { type: String, default: 'editor' },
+        role: { type: String, enum: ['admin', 'editor'], default: 'editor' },
         twoFactorAuth: String,
     },
-    { timestamps: true } // Добавляем createdAt и updatedAt
+    { timestamps: true }
 );
-
-// Хеширование пароля перед сохранением
-userSchema.pre('save', async function (next) {
-    if (!this.isModified('password')) return next();
-    this.password = await bcrypt.hash(this.password, 10);
-    next();
-});
-
-// Метод для проверки пароля
-userSchema.methods.comparePassword = async function (candidatePassword) {
-    return bcrypt.compare(candidatePassword, this.password);
-};
 
 module.exports = mongoose.model('User', userSchema);

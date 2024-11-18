@@ -1,0 +1,77 @@
+.carousel img {
+    max-height: 300px; 
+    width: auto; 
+    object-fit: contain; 
+    margin: 0 auto; 
+}
+
+.headline h2 {
+    flex-grow: 1;
+    margin: 0;
+    color: #cc0000;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+.photo-gallery {
+    padding: 20px 0;
+    background-color: #f8f9fa; 
+}
+
+.gallery-title {
+    color: #cc0000; 
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+    max-height: 250px; /* Выравниваем высоту всех изображений */
+}
+
+.card-title {
+    color: #333; /* Темный текст */
+    font-weight: bold;
+}
+
+.card-text {
+    color: #555; /* Более светлый текст */
+}
+.headline {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    background-color: white; /* Если нужен фон */
+    padding: 10px;
+}
+
+.logo-img {
+    max-height: 60px; /* Настройте высоту логотипа */
+    width: auto; /* Пропорциональная ширина */
+    margin-right: 15px; /* Отступ от текста */
+    display: block;
+}
+
+.headline-text {
+    flex-grow: 1;
+    font-size: 24px;
+    color: #cc0000;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+

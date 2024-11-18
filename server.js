@@ -8,8 +8,6 @@ const session = require('express-session');
 const portfolioRoutes = require('./routes/portfolio');
 const authRoutes = require('./routes/auth');
 
-dotenv.config(); // Загружаем переменные из .env
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -18,7 +16,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-app.use('/auth', authRoutes);
 
 // Session setup
 app.use(
@@ -29,9 +26,10 @@ app.use(
     })
 );
 
-// Подключение маршрутов
+// Routes
+app.use('/auth', authRoutes);
 app.use('/portfolio', portfolioRoutes);
-app.use('/', require('./routes/index')); // Подключаем основной маршрут
+app.use('/', require('./routes/index')); // Главная страница
 
 // MongoDB connection
 mongoose
@@ -45,4 +43,3 @@ mongoose
     .catch((error) => {
         console.error('Ошибка подключения к MongoDB:', error);
     });
-

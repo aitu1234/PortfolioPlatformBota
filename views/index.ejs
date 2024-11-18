@@ -4,52 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title || 'Main Page' %></title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/portfolio">Portfolio</a>
-            <a href="/auth/login">Login</a>
-            <a href="/auth/register">Register</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome to the Portfolio Platform!</h1>
-        <p>Here you can manage your portfolio and explore data visualization.</p>
-
-        <!-- Carousel Section -->
-        <div id="materialsCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#materialsCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#materialsCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#materialsCarousel" data-bs-slide-to="2"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/images/wood-protection.png" class="d-block w-100" alt="Wood Protection">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/waterproofing.png" class="d-block w-100" alt="Waterproofing">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/best-prices.png" class="d-block w-100" alt="Best Prices">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#materialsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#materialsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <header class="bg-dark text-white p-3">
+    <nav class="container d-flex justify-content-between">
+        <a href="/" class="text-white text-decoration-none">Главная</a>
+        <div>
+            
+            <a href="/auth/login" class="btn btn-outline-light btn-sm">Вход</a>
+            <a href="/auth/register" class="btn btn-outline-light btn-sm">Регистрация</a>
         </div>
-    </main>
-    <footer>
+    </nav>
+</header>
+
+    
+
+<div class="headline d-flex align-items-center">
+    <img src="https://kurilis.kz/image/data/logo.png" alt="Logo" class="logo-img">
+    <h2 class="w-100 text-center">НАДЕЖНЫЕ РЕШЕНИЯ ДЛЯ КАЧЕСТВЕННОГО СТРОИТЕЛЬСТВА</h2>
+</div>
+
+
+
+    <!-- Carousel Section -->
+    <div id="materialsCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#materialsCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#materialsCarousel" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://neostrim.kz/upload/iblock/cb0/wxzygk1ztexyshywjhwyd84fjn0g1mwz.png" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://neostrim.kz/upload/iblock/632/3wzbu8r3s2u2k6xobnpkp0w20xrcnol8.png" class="d-block w-100" alt="Image 2">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#materialsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#materialsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="photo-gallery mt-5">
+        <div class="container">
+            <h3 class="gallery-title text-center mb-4 text-danger">Наши лучшие продукты</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://neostrim.kz/upload/resize_cache/iblock/64e/740_740_1/6zpbrvdt423p8ugzhaft3zasywnpk0cc.jpg" class="card-img-top" alt="Лучшие цены">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Лучшие цены</h5>
+                            <p class="card-text">Акционные предложения для фасадных красок с выгодой до 20%.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://neostrim.kz/upload/resize_cache/iblock/4a0/740_740_1/w2k0gfp942atz23zdg11f1gp3bqi23mb.jpg" class="card-img-top" alt="Гидроизоляционные материалы">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Гидроизоляционные материалы</h5>
+                            <p class="card-text">Решения для защиты стен и полов с максимальной долговечностью.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://neostrim.kz/upload/resize_cache/iblock/aed/740_740_1/a2l9upphnwji8dvgp3t5uu5syticco8g.jpg" class="card-img-top" alt="Защита дерева">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Особа прочная</h5>
+                            <p class="card-text">Эффективные покрытия для долговечности конструкций.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
         <p>&copy; 2024. Zhamanbai Akbota BDA-2303.</p>
     </footer>
 </body>
